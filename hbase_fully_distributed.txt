@@ -1,0 +1,31 @@
+conf/backup-masters:
+	zoo2
+conf/regionservers:
+	zoo3
+	zoo4
+	zoo5
+
+
+<property>  
+	<name>hbase.rootdir</name>  
+	<value>hdfs://mycluster/hbase</value>  
+</property>  
+<!--是否分布式-->  
+<property>  
+	<name>hbase.cluster.distributed</name>  
+	<value>true</value>  
+</property>  
+<!--zookeeper部署的主机名和访问的端口号-->  
+<property>  
+	<name>hbase.zookeeper.quorum</name>  
+	<value>zoo3:2181,zoo4:2181,zoo5:2181</value>  
+</property>  
+<!--每台服务器上zookeeper的data文件夹下路径-->  
+<property>  
+	<name>hbase.zookeeper.property.dataDir</name>  
+	<value>/opt/hbase-1.2.6/data</value>  
+</property>
+<property>  
+	<name>hbase.master</name>  
+	<value>60000</value>  
+</property>
